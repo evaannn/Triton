@@ -1,28 +1,26 @@
-# newd
-newd (new disassembler) lol i couldn't figure a good name so.
-the point of this project was simply a POC (proof of concept) on typed deserialization methods 
-along with configurable disassemblers.
+# Triton
+Triton is a basic Lua Disassembler used to experiment with type deserialization and Lua 5.1's LuaJIT and its respective VMs.
 
-# output
+# Examples on Using Triton
 ```lua
 if true then
     print(true and false)
     print(true or false)
 else
-    print('aaaaa')
+    print('sex')
     for i = 1, 100 do
         local function add() return false end
     end
 end
 ```
 
-when feeding newd the bytecode of the previous code snippet you will be greeted with the following disassembly view
+When using the above code, Triton returns this:
 ```asm
-[NEWD] - detected virtual machine signature LuaQ VM
+[TRITON] - detected virtual machine signature LuaQ VM
 func_0000000C[nupv->0, narg->0](@main.lua)
 
 .constant string Cnst[0]  print
-.constant string Cnst[1]  aaaaa
+.constant string Cnst[1]  sex
 .constant number Cnst[2]  1
 .constant number Cnst[3]  100
 
